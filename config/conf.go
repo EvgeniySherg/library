@@ -31,15 +31,4 @@ func GetConfiguration() Configuration {
 		log.Fatal(err)
 	}
 	return configuration
-} //через конфигуратор
-//func GetConfiguration() Configuration {
-//	file, _ := os.Open("config.json")
-//	defer file.Close()
-//	decoder := json.NewDecoder(file)
-//	configuration := Configuration{}
-//	err := decoder.Decode(&configuration)
-//	if err != nil {
-//		log.Fatal(err)
-//	}
-//	return configuration
-//}
+
