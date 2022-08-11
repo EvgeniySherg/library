@@ -2,7 +2,7 @@
   "DatabaseSource": {
     "Driver": "mysql",
     "User": "Evgeniy",
-    "Password": "1488udirin74Qw/",
+    "Password": "8udirin74Qw/",
     "ServerAddress": "@tcp(127.0.0.1:3306)",
     "DatabaseName": "library"
   }
