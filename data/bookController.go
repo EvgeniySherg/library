@@ -17,15 +17,6 @@ func CreateBookController(db *sql.DB) *bookController {
 	return &bookController{service: newService}
 }
 
-//func (bc *bookController) GetBooks() func(http.ResponseWriter, *http.Request) {
-//	return func(w http.ResponseWriter, r *http.Request) {
-//		books := bc.service.GetBook()
-//		_, err := fmt.Fprintln(w, books)
-//		if err != nil {
-//			fmt.Println(err)
-//		}
-//	}
-//} // старый вариант через http package
 
 func (bc *bookController) GetBooks(c echo.Context) error {
 	books := bc.service.GetBook()
@@ -62,40 +53,4 @@ func (bc *bookController) DeleteBook(c echo.Context) error {
 	return c.JSON(http.StatusOK, book)
 }
 
-//
-//func (bc *bookController) CreateBook() func(http.ResponseWriter, *http.Request) {
-//	return func(w http.ResponseWriter, r *http.Request) {
-//		method := r.Method
-//		if method == "POST" {
-//			var book Book
-//			json.NewDecoder(r.Body).Decode(&book)
-//			bc.service.InsertBook(&book)
-//			_, err := fmt.Fprintln(w, book)
-//			if err != nil {
-//				fmt.Println(err)
-//			}
-//		}
-//	}
-//} // старый вариант через http package
 
-//func (bc *bookController) UpdateBook() func(http.ResponseWriter, *http.Request) {
-//	return func(w http.ResponseWriter, r *http.Request) {
-//		newBook := bc.getBookFromRequest(r)
-//		_, err := bc.service.UpdateBook(newBook)
-//		if err != nil {
-//			fmt.Println(err)
-//		}
-//	}
-//}
-
-//func (bc *bookController) getBookFromRequest(r *http.Request) *Book {
-//	query := r.URL.Query()
-//	i, _ := strconv.Atoi(query["amount"][0])
-//	return &Book{
-//		Title:    query["title"][0],
-//		Author:   query["author"][0],
-//		Jenre:    query["jenre"][0],
-//		Bookcase: query["bookcase"][0],
-//		Amount:   i,
-//	}
-//} Старый вариант для ввода всех параметров через поисковую строку
