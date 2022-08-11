@@ -1,3 +1,5 @@
+//Created a MySQL database with some book data. It is necessary to create an application for working with the database through the browser
+
 package main
 
 import (
